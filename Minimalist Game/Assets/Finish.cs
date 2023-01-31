@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Points : MonoBehaviour
+public class Finish : MonoBehaviour
 {
-    // Update is called once per frame
+    public Score UI;
     void OnTriggerEnter2D(Collider2D other) {
         if (other.tag == "Player") {
-            Debug.Log("Points +100");
-            Destroy(gameObject);
+            Debug.Log("Win");
+            UI.calculateScore();
         }
     }
 }
