@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     public float launchForce;
     public Launch triangle;
     public GameObject pointer;
+    public Score strikeText;
     public Rigidbody2D rb;
 
     // Update is called once per frame
@@ -32,6 +33,7 @@ public class Player : MonoBehaviour
             Invoke("SetLaunchFalse", 1f);
             triangle.launch = false;
             pointer.GetComponent<Renderer>().enabled = false;
+            strikeText.Strike();
         }
 
         speedSquare = Mathf.Pow(rb.velocity.x, 2) + Mathf.Pow(rb.velocity.y, 2);
