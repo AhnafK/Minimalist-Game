@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     public float speed = 120f;
     public float launchForce;
     public Launch triangle;
+    public GameObject pointer;
     public Rigidbody2D rb;
 
     // Update is called once per frame
@@ -22,17 +23,19 @@ public class Player : MonoBehaviour
             speed = 0f;
             triangle.launch = true;
         } else if (Input.GetKeyDown("space") && launch) {
-            rb.AddForce(transform.up * launchForce * triangle.yPos);
+            rb.AddForce(transform.up * launchForce * Mathf.Pow(triangle.yPos, 3));
             Debug.Log("launch");
             rb.freezeRotation = true;
             Invoke("SetLaunchFalse", 1f);
             triangle.launch = false;
+            pointer.GetComponent<Renderer>().enabled = false;
         }
 
         if (rb.velocity == new Vector2(0.0f, 0.0f) && !launch) {
             aim = true;
             speed = 120f;
             rb.freezeRotation = false;
+            pointer.GetComponent<Renderer>().enabled = true;
         }
 
         if (aim) {
