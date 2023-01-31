@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class Points : MonoBehaviour
 {
+    [SerializeField]
+    int point;
+    public Score score;
+    
     // Update is called once per frame
     void OnTriggerEnter2D(Collider2D other) {
         if (other.tag == "Player") {
-            Debug.Log("Points +100");
+            score.Increment(point);
             Destroy(gameObject);
         }
     }
