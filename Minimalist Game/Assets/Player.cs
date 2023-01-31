@@ -8,6 +8,9 @@ public class Player : MonoBehaviour
     bool aim = true;
     [SerializeField]
     bool launch = false;
+    float speedSquare;
+    [SerializeField]
+    float minSpeed;
     public float speed = 120f;
     public float launchForce;
     public Launch triangle;
@@ -31,7 +34,8 @@ public class Player : MonoBehaviour
             pointer.GetComponent<Renderer>().enabled = false;
         }
 
-        if (rb.velocity == new Vector2(0.0f, 0.0f) && !launch) {
+        speedSquare = Mathf.Pow(rb.velocity.x, 2) + Mathf.Pow(rb.velocity.y, 2);
+        if (Mathf.Sqrt(speedSquare) < minSpeed && !launch) {
             aim = true;
             speed = 120f;
             rb.freezeRotation = false;
