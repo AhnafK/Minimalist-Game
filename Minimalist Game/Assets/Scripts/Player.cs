@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     float minSpeed;
     public float speed = 120f;
     public float launchForce;
+    public float delay = 1/20f;
     public Launch triangle;
     public GameObject pointer;
     public Score strikeText;
@@ -26,18 +27,17 @@ public class Player : MonoBehaviour
             aim = false;
             speed = 0f;
             triangle.launch = true;
-        } else if (Input.GetKeyDown("space") && launch) {
+        } else if (Input.GetKeyUp("space") && launch) {
             rb.AddForce(transform.up * launchForce * Mathf.Pow(triangle.yPos, 3));
             Debug.Log("launch");
             rb.freezeRotation = true;
-            Invoke("SetLaunchFalse", 1f);
+            Invoke("SetLaunchFalse", delay);
             triangle.launch = false;
             pointer.GetComponent<Renderer>().enabled = false;
             strikeText.Strike();
         }
 
-        speedSquare = Mathf.Pow(rb.velocity.x, 2) + Mathf.Pow(rb.velocity.y, 2);
-        if (Mathf.Sqrt(speedSquare) < minSpeed && !launch) {
+        if (rb.velocity.magnitude < minSpeed && !launch) {
             aim = true;
             speed = 120f;
             rb.freezeRotation = false;

@@ -938,9 +938,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   aim: 1
   launch: 0
-  minSpeed: 0.1
+  minSpeed: 0.4
   speed: 30
   launchForce: 100
+  delay: 0.05
   triangle: {fileID: 29949291}
   pointer: {fileID: 29949287}
   strikeText: {fileID: 1512289416}
