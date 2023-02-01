@@ -749,6 +749,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pac-Man (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8151433014933622288, guid: 1b98723c785bd450681cc847fcb5539e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4787,7 +4791,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1817265516}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cb53d93dbe26439292c23b2a98ff2fd, type: 3}
   m_Name: 

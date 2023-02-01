@@ -2559,17 +2559,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5011474113490374768, guid: 910684a161bce144abfdb74045f43bfd, type: 3}
+      propertyPath: m_Color.b
+      value: 0.63827336
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011474113490374768, guid: 910684a161bce144abfdb74045f43bfd, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5613208
+      objectReference: {fileID: 0}
+    - target: {fileID: 5011474113490374768, guid: 910684a161bce144abfdb74045f43bfd, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5011474113490374769, guid: 910684a161bce144abfdb74045f43bfd, type: 3}
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5011474113490374769, guid: 910684a161bce144abfdb74045f43bfd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.05
+      value: -1.25
       objectReference: {fileID: 0}
     - target: {fileID: 5011474113490374769, guid: 910684a161bce144abfdb74045f43bfd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.16
+      value: -5.5
       objectReference: {fileID: 0}
     - target: {fileID: 5011474113490374769, guid: 910684a161bce144abfdb74045f43bfd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4532,6 +4544,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pac-Man
       objectReference: {fileID: 0}
+    - target: {fileID: 8151433014933622288, guid: 1b98723c785bd450681cc847fcb5539e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6248,7 +6264,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1817265516}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cb53d93dbe26439292c23b2a98ff2fd, type: 3}
   m_Name: 
