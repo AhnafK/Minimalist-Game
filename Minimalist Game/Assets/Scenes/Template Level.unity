@@ -1214,6 +1214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1737025896}
   strikeText: {fileID: 220205550}
+  parText: {fileID: 191604460}
 --- !u!114 &1512289417
 MonoBehaviour:
   m_ObjectHideFlags: 0
