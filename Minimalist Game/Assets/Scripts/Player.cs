@@ -19,13 +19,15 @@ public class Player : MonoBehaviour
     public Score strikeText;
     public Rigidbody2D rb;
 
+    bool spinning = true;
+
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown("space") && aim) {
             launch = true;
             aim = false;
-            speed = 0f;
+            spinning = false;
             triangle.launch = true;
         } else if (Input.GetKeyUp("space") && launch) {
             rb.AddForce(transform.up * launchForce * Mathf.Pow(triangle.yPos, 3));
@@ -38,13 +40,19 @@ public class Player : MonoBehaviour
         }
 
         if (rb.velocity.magnitude < minSpeed && !launch) {
+            rb.velocity = Vector2.zero;
             aim = true;
-            speed = 120f;
+            speed = 120f*(1+Mathf.Floor(Random.Range(0,2)));
+            if(Random.Range(0,1) < 0.5)
+            {
+                speed *= -1;
+            }
+            spinning = true;
             rb.freezeRotation = false;
             pointer.GetComponent<Renderer>().enabled = true;
         }
 
-        if (aim) {
+        if (aim && spinning) {
             transform.Rotate(0,0, speed*Time.deltaTime);
         }
     }
