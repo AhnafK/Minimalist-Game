@@ -41,9 +41,14 @@ public class Score : MonoBehaviour
     }
 
     public void calculateScore() {
-        currentScore += 1000;// * (par - strike);
+        currentScore += 1000;
         // change 5 to par amount per course
         Debug.Log(currentScore);
+        PlayerPrefs.SetInt("score", currentScore);
+    }
+
+    public void penalty() {
+        currentScore -= 500;
         PlayerPrefs.SetInt("score", currentScore);
     }
 }
