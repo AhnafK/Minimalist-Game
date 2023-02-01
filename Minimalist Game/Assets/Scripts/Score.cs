@@ -21,6 +21,7 @@ public class Score : MonoBehaviour
             par = 10;
         }
         parText.text = "Par " + par;
+        currentScore = PlayerPrefs.GetInt("score");
     }
 
     // Update is called once per frame
@@ -42,5 +43,6 @@ public class Score : MonoBehaviour
         currentScore += 1000 * (par - strike);
         // change 5 to par amount per course
         Debug.Log(currentScore);
+        PlayerPrefs.SetInt("score", currentScore);
     }
 }
