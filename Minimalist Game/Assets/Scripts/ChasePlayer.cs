@@ -17,10 +17,4 @@ public class ChasePlayer : MonoBehaviour
 
         transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
     }
-
-    void OnTriggerEnter2D(Collider2D other){
-        if (other.tag == "Player") {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
-    }
 }

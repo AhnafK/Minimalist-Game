@@ -8,13 +8,13 @@ public class Score : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI strikeText;
     int currentScore = 0;
-    int stroke = 0;
+    int strike = 0;
 
     // Update is called once per frame
     void Update()
     {
         scoreText.text = "Score: " + currentScore.ToString(); 
-        strikeText.text = "Stroke " + stroke.ToString();
+        strikeText.text = "Strike " + strike.ToString();
     }
 
     public void Increment(int points) {
@@ -22,11 +22,11 @@ public class Score : MonoBehaviour
     }
 
     public void Strike() {
-        stroke += 1;
+        strike += 1;
     }
 
     public void calculateScore() {
-        currentScore += 1000 * (5 - stroke);
+        currentScore += 1000 * (5 - strike);
         // change 5 to par amount per course
         Debug.Log(currentScore);
     }
