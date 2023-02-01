@@ -7,7 +7,8 @@ public class Start : MonoBehaviour
 {
     void Update() {
         if (Input.GetKeyDown("space")) {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene(1);
+            PlayerPrefs.SetInt("score", 0);
         }
     }
 }

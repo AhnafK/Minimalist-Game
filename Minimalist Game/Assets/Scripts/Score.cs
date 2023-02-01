@@ -15,17 +15,17 @@ public class Score : MonoBehaviour
 
     void Start() {
         Scene scene = SceneManager.GetActiveScene();
-        if (scene.name == "Level 1") {
-            par = 5;
-        } else {
-            par = 10;
-        }
-        parText.text = "Par " + par;
+        //if (scene.name == "Level 1") {
+        //    par = 5;
+        //} else {
+        //    par = 10;
+        //}
+        //parText.text = "Par " + par;
         currentScore = PlayerPrefs.GetInt("score");
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         scoreText.text = "Score: " + currentScore.ToString(); 
         strikeText.text = "Strike " + strike.ToString();
@@ -37,10 +37,11 @@ public class Score : MonoBehaviour
 
     public void Strike() {
         strike += 1;
+        currentScore -= 50;
     }
 
     public void calculateScore() {
-        currentScore += 1000 * (par - strike);
+        currentScore += 1000;// * (par - strike);
         // change 5 to par amount per course
         Debug.Log(currentScore);
         PlayerPrefs.SetInt("score", currentScore);
